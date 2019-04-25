@@ -1,0 +1,22 @@
+This assignment is a bit longer since the chapter information is so short.  This assignment will have you create tables and populate them using SQL.  You will then use Java to connect to the database and run queries against them, displaying results in a JTable.  There are several steps involved, so make sure you follow each one in order and use the log file, week14_jdbc.log, as a guide for any database related problems (if you need help from me, I will ask for this log file).
+
+As you are modifying LibrarySystem.java, you may choose to create an Eclipse project so you can compile and modify it there as normal, but to compile it, you will need to add these .jar files to your Eclipse path: derby.jar and derbytools.jar - both are found in the extracted /lib folder.  However, to test the database part of the application, you MUST run the command line utility, run.bat. 
+
+1) Extract the assignment ZIP file to a folder of your choice using WinZip or some other extraction utility.
+
+2) Once extracted, run the setup script, setup.bat. 
+
+3) Open the file: sql\booksTables.sql.  Add an SQL CREATE TABLE statement that will create a database table holding check-out information. Include the following fields required for checkin/out information (you may wish to add more):
+     Table Name: CHECK_OUTS
+     Fields: ISBN, PATRON_SSN, DUE_DATE (ISBN should be the only primary key)
+- Note how the existing SQL statements in this file are formatted with a semicolon character at the end of each statement. Make sure that your CREATE TABLE statement ends with this semicolon as well.
+
+4) INSERT statements have been provided for the BOOKS table. Create SQL statements to insert at least 3 records into the PATRONS table. Records for CHECK_OUTS are optional.
+
+5) Re-run the file, setup.bat to implement these changes - DO NOT run this file again, or all records will be dropped!
+
+6) Update the Java class file, java\LibrarySystem.java where you see a comment such as "// ITP 220 - complete this". You will be creating a JDBC connection to the database using the connection driver, "org.apache.derby.jdbc.EmbeddedDriver" and the protocol "jdbc:derby:" to retrieve and write to the database.
+
+7) To test your application, run the execution script, run.bat which recompiles your Java class with a reference to the active database instance.
+
+8) Submit both updated assignment files (as a zip file): booksTables.sql and LibrarySystem.java.
